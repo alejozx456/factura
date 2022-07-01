@@ -1,0 +1,21 @@
+.container{
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  mat-card-title{
+    background-color: #B33949;;
+  }
+  .botonRegresar{
+    margin-left: 90%;
+    background-color: #B33949;
+    margin-top: 2%;
+    margin-bottom: 2%;
+  }
+  table {
+    width: 100%;  
+    background-color: rgb(100, 87, 90);
+  }
+ .subtotal{
+  margin-left: 80%;
+ }
+  

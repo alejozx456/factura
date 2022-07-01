@@ -1,0 +1,21 @@
+.separar{
+    margin-right: 10px;
+}
+
+.separar1{
+    margin: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.botonCrearFactura{
+    margin-top: 5%;
+    margin-left: 65%;
+    background-color: #B33949;
+  }
+table {
+    width: 100%;
+    height: 100%;
+  }
+  .botonVer{
+    background-color: #B33949;
+  }

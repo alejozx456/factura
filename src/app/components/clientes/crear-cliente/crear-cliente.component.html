@@ -1,0 +1,51 @@
+<div>
+    <mat-card class="example-card">
+        <mat-card-title>Cliente
+            <mat-icon>supervised_user_circle</mat-icon>
+        </mat-card-title>
+        <mat-card-subtitle>Crear</mat-card-subtitle>
+        <mat-card-content>
+            <form class="example-form">
+                <mat-form-field class="example-full-width" appearance="fill">
+                  <mat-label>nombre</mat-label>
+                  <input matInput [(ngModel)]="cliente.nombre" name="nombre" #nombre="ngModel" placeholder="Ingrese su nombre">
+                </mat-form-field>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>apellido</mat-label>
+                    <input matInput [(ngModel)]="cliente.apellido" name="apellido" #apellido="ngModel" placeholder="Ingrese su apellido">
+                  </mat-form-field>   
+                  <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>email</mat-label>
+                    <input matInput [(ngModel)]="cliente.email" name="email" #email="ngModel" placeholder="Ingrese su email">
+                  </mat-form-field>              
+                  <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Fecha de Nacimiento</mat-label>
+                    <input matInput [(ngModel)]="cliente.createAt" name="createAt" [matDatepicker]="picker">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matSuffix [for]="picker">
+                      <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+                    </mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                    
+                  </mat-form-field>
+                  <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Provincia</mat-label>
+                    <mat-select [(ngModel)]="cliente.region" name="region">
+                      <mat-option  [value]="undefined">
+                        Seleccionar Region
+                      </mat-option>
+                      <mat-option *ngFor="let region of regiones"  [value]="region">
+                        {{region.nombre}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  
+              </form>
+        </mat-card-content>
+        <mat-card-actions>
+            <button class="botonCrear" (click)="crearCliente()" mat-raised-button color mat-dialog-close="accent">Crear
+                <mat-icon>add</mat-icon>
+            </button>
+        </mat-card-actions>
+      </mat-card>    
+</div>
