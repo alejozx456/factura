@@ -1,0 +1,17 @@
+.container{
+    max-width: 800px;
+    margin: 0 auto;
+  }
+ .example-form {
+    width: 100%;
+  }
+  input{
+    width: 100%;
+  }
+  mat-form-field{
+    width: 100%;
+    margin-top: 3%;
+  }
+  .botonBuscar{
+    background-color: #B33949;
+  }

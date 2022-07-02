@@ -1,1 +1,39 @@
-<p>facturas works!</p>
+<div class="container">
+    <a [routerLink]="['/clientes']" mat-raised-button class="botonRegresar" >&laquo; regresar</a>
+    <div>
+        <mat-card class="example-card">
+            <mat-card-title>Crear Factura</mat-card-title>
+           
+            <mat-card-subtitle>Descripcion: {{factura.descripcion}} </mat-card-subtitle>
+            <mat-card-content>
+             <form  class="example-form">
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label >Cliente</mat-label>
+                    <input matInput  name="cliente"  readonly="true" 
+                    value={{nombreCliente}}>
+                  </mat-form-field>
+                  <button class="botonBuscar" (click)="openDialogBuscar()" mat-raised-button>Buscar Cliente
+                    <mat-icon class="iconoCrear">search</mat-icon> 
+                 </button>
+                  <br>
+                  <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Descripcion</mat-label>
+                    <input matInput [(ngModel)]="factura.descripcion" name="descripcion" #descripcion="ngModel" >
+                  </mat-form-field>
+                  <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Observacion</mat-label>
+                    <input matInput [(ngModel)]="factura.observacion" name="observacion" #observacion="ngModel" >
+                  </mat-form-field>
+                  <button class="botonBuscar" (click)="openDialogBuscarProducto()" mat-raised-button>Buscar Producto
+                    <mat-icon class="iconoCrear">search</mat-icon> 
+                 </button>
+             </form>
+           
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-button>LIKE</button>
+              <button mat-button>SHARE</button>
+            </mat-card-actions>
+          </mat-card>
+    </div>
+</div>
