@@ -29,6 +29,8 @@ import { FacturasComponent } from './components/facturas/facturas.component';
 import { DetalleFacturaComponent } from './components/facturas/detalle-factura/detalle-factura.component';
 import { BuscarClienteComponent } from './components/clientes/buscar-cliente/buscar-cliente.component';
 import { BuscarProductoComponent } from './components/productos/buscar-producto/buscar-producto.component';
+import { CrearFacturaComponent } from './components/facturas/crear-factura/crear-factura.component';
+import { ListaFacturaComponent } from './components/facturas/lista-factura/lista-factura.component';
 
 
 @NgModule({
@@ -41,7 +43,9 @@ import { BuscarProductoComponent } from './components/productos/buscar-producto/
     FacturasComponent,
     DetalleFacturaComponent,
     BuscarClienteComponent,
-    BuscarProductoComponent
+    BuscarProductoComponent,
+    CrearFacturaComponent,
+    ListaFacturaComponent
   ],
   imports: [
     BrowserModule,

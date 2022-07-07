@@ -1,0 +1,11 @@
+table {
+    width: 100%;
+    
+  }
+  .container{
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .botonVer{
+    background-color: #B33949;
+  }

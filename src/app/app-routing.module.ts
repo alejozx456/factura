@@ -5,6 +5,7 @@ import { CrearClienteComponent } from './components/clientes/crear-cliente/crear
 import { DetalleClienteComponent } from './components/clientes/detalle-cliente/detalle-cliente.component';
 import { DetalleFacturaComponent } from './components/facturas/detalle-factura/detalle-factura.component';
 import { FacturasComponent } from './components/facturas/facturas.component';
+import { ListaFacturaComponent } from './components/facturas/lista-factura/lista-factura.component';
 
 const routes: Routes = [
   {path:"clientes",component:ClientesComponent},
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path:"clientes/ver/:id",component:DetalleClienteComponent},
   {path:"facturas/:id",component:DetalleFacturaComponent},
   {path:"facturas",component:FacturasComponent},
+  {path:"listar",component:ListaFacturaComponent},
   {path:'',redirectTo:'clientes',pathMatch:'full'}
 ];
 

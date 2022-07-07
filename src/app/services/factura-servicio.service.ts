@@ -25,5 +25,8 @@ export class FacturaServicioService {
      
     );
   }
+  getFacturas():Observable<Venta[]>{
+    return this.http.get<Venta[]>(this.urlEndPoint);
+  }
  
 }
