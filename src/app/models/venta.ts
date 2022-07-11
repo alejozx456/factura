@@ -3,8 +3,8 @@ import { DetalleVenta } from "./detalle-venta";
 
 export class Venta {
     id:number=0;
-    descripcion:string;
-    observacion:string;
+    descripcion?:string;
+    observacion?:string;
     items:Array<DetalleVenta>=[];
     cliente:Cliente;
     total:number;

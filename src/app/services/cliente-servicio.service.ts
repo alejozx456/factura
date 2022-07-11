@@ -31,4 +31,8 @@ private httpHeaders= new HttpHeaders({
       map((response:any)=>response.cliente as Cliente)
     );
   }
+
+  delete(id:number):Observable<Cliente>{
+    return this.htttp.delete<Cliente>(`${this.urlEndPoint}/${id}`,{headers:this.httpHeaders})
+  }
 } 

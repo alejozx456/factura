@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ClientesComponent } from './components/clientes/clientes.component';
 import { CrearClienteComponent } from './components/clientes/crear-cliente/crear-cliente.component';
 import { DetalleClienteComponent } from './components/clientes/detalle-cliente/detalle-cliente.component';
+import { CrearFacturaComponent } from './components/facturas/crear-factura/crear-factura.component';
 import { DetalleFacturaComponent } from './components/facturas/detalle-factura/detalle-factura.component';
 import { FacturasComponent } from './components/facturas/facturas.component';
 import { ListaFacturaComponent } from './components/facturas/lista-factura/lista-factura.component';
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path:"clientes/ver/:id",component:DetalleClienteComponent},
   {path:"facturas/:id",component:DetalleFacturaComponent},
   {path:"facturas",component:FacturasComponent},
+  {path:"factura",component:CrearFacturaComponent},
   {path:"listar",component:ListaFacturaComponent},
   {path:'',redirectTo:'clientes',pathMatch:'full'}
 ];

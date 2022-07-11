@@ -28,5 +28,8 @@ export class FacturaServicioService {
   getFacturas():Observable<Venta[]>{
     return this.http.get<Venta[]>(this.urlEndPoint);
   }
+  deleteFactura(id:number):Observable<void>{
+    return this.http.delete<void>(`${this.urlEndPoint}/${id}`);
+  }
  
 }

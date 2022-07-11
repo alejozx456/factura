@@ -12,6 +12,8 @@ import { DetalleClienteComponent } from '../clientes/detalle-cliente/detalle-cli
 import { BuscarProductoComponent } from '../productos/buscar-producto/buscar-producto.component';
 
 import Swal from 'sweetalert2';
+import { Producto } from 'src/app/models/producto';
+import { toast } from 'toast-notification-alert';
 
 @Component({
   selector: 'app-facturas',
@@ -21,10 +23,10 @@ import Swal from 'sweetalert2';
 export class FacturasComponent implements OnInit {
 
   factura:Venta=new Venta();
-  detalleFactura=new DetalleVenta();
-
+  
+  detalleFacturas:DetalleVenta[]=[]
   nombreCliente:any
-  public columnsToDisplay = ['producto','precio','cantidad','total'];
+  public columnsToDisplay = ['producto','precio','cantidad','total','eliminar'];
   public dataSource:any=new MatTableDataSource();
   
 
@@ -48,6 +50,7 @@ export class FacturasComponent implements OnInit {
       this.factura.cliente=result
       this.nombreCliente=this.factura.cliente.nombre+" "+this.factura.cliente.apellido
       //console.log(this.nombreCliente)
+      console.log(this.factura)
       
     
     })
@@ -60,20 +63,31 @@ export class FacturasComponent implements OnInit {
       
       
     });
-    dialogRef2.afterClosed().subscribe(result=>{
-      this.detalleFactura=result
+    dialogRef2.afterClosed().subscribe((result:Producto)=>{
+     
       //let listadetalle:DetalleVenta[]
       //listadetalle.push(result)
       //this.item.push(result)
       //this.factura.items=result
       //this.nuevoItem.producto=result
-      this.factura.items.push(this.detalleFactura)
+      //this.detalleFacturas.push(result)
+      if(this.existeItem(result.id)){
+        //this.incrementaCantidad(result.id);
+      
+      }else{
+     let detalleFactura=new DetalleVenta();
+      detalleFactura.producto=result
+      //this.detalleFactura=result
+      this.factura.items.push(detalleFactura)
+      console.log(detalleFactura)
+      }
      //this.dataSource=this.factura.items
      this.dataSource.connect().next(this.factura.items)
-      console.log(this.dataSource)
-      console.log(this.factura)
-      console.log(this.detalleFactura)
+      //console.log(this.dataSource)
+      console.log(this.factura.items)
+     
       //console.log(listadetalle)
+     
 
     
     })
@@ -95,6 +109,29 @@ export class FacturasComponent implements OnInit {
       Swal.fire("Venta",`Factura${factura.descripcion} creada con exito`,'success');
       this.router.navigate(['/clientes']);
     })
+  }
+
+  existeItem(id:number):boolean{
+    let existe=false;
+    this.factura.items.forEach((item:DetalleVenta)=>{
+      if(id===item.producto.id){
+        existe=true;
+      }
+    })
+    return existe;
+  }
+
+  incrementaCantidad(id:number):void{
+    this.factura.items=this.factura.items.map((item:DetalleVenta)=>{
+      if(id===item.producto.id){
+        ++item.cantidad;
+      }
+      return item;
+    })
+  }
+  eliminarItemFactura(id:number):void{
+    this.factura.items=this.factura.items.filter((item:DetalleVenta)=>id !== item.producto.id)
+    this.dataSource.connect().next(this.factura.items)
   }
 
  

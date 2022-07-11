@@ -3,6 +3,7 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
+import { DetalleVenta } from 'src/app/models/detalle-venta';
 import { Producto } from 'src/app/models/producto';
 import { ProductoServicioService } from 'src/app/services/producto-servicio.service';
 
@@ -13,7 +14,7 @@ import { ProductoServicioService } from 'src/app/services/producto-servicio.serv
 })
 export class BuscarProductoComponent implements OnInit {
 
-  public columnsToDisplay = ['elegir','id','nombre','precio'];
+  public columnsToDisplay = ['elegir','id','nombre','precio','stock'];
   public dataSource:any=new MatTableDataSource();
   public producto:Producto[]
   @ViewChild(MatPaginator) paginator:MatPaginator;
@@ -33,7 +34,7 @@ export class BuscarProductoComponent implements OnInit {
     })
   }
 
-  mandarProductos(producto:Producto){
+  mandarProductos(producto:DetalleVenta){
     this.dialogRef.close(producto)
   }
 

@@ -23,6 +23,7 @@ import {MatSelectModule} from '@angular/material/select';
 import { FormsModule } from '@angular/forms';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatSortModule} from '@angular/material/sort';
 import { CrearClienteComponent } from './components/clientes/crear-cliente/crear-cliente.component';
 import { DetalleClienteComponent } from './components/clientes/detalle-cliente/detalle-cliente.component';
 import { FacturasComponent } from './components/facturas/facturas.component';
@@ -67,7 +68,8 @@ import { ListaFacturaComponent } from './components/facturas/lista-factura/lista
     MatSelectModule,
     FormsModule,
     MatDialogModule,
-    MatTabsModule
+    MatTabsModule,
+    MatSortModule
   ],
   providers: [],
   bootstrap: [AppComponent]
